@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.info{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ccc;
+  
+  
+    margin: auto;
+    background: pink;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border-radius: 7px;
+}
+#titulo{
+    text-align: center;
+}
+.dato{
+    background: #f7e8f6;
+    border-radius: 7px;
+    color: black;
+    text-align: center;
+}

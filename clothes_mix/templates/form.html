@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/form.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/localstorage.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/carrusel.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/v4-shims.css">
+    <script src="js/mapa.js"></script>
+    <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>ClothesMix</title>
+</head>
+
+<body>
+    <header>
+        <div class="menuSuperior container">
+            <div class="row">
+                <div class="logoContainer col-xs-6">
+                    <a class="logoBoton" href="index.html"><img class="logo" src="img/Logo.PNG"
+                            alt="Logo de la pagina"></a>
+                </div>
+                <div class="menuFila col-xs-6">
+                    <nav class="menu">
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="galeria.html">Galeria</a></li>
+                            <li><a href="form.html">Formulario</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <form >
+        <h2>Formulario</h2>
+
+        
+        <input id="correo" type="email" placeholder="Email" required>
+        <input id="contraseña" type="password" placeholder="Contraseña" required>
+        <input id="nombre" type="text" placeholder="Nombres" required>
+        <input id="apellido" type="text" placeholder="Apellidos" required>
+        <input id="fecha" type="date"   required >
+
+        <button id="ingresar">Ingresar</button>
+
+    </form>
+    <button id="mostrar" onclick="myFunction()">Mostrar datos</button>
+    <footer>
+        <div class="container footer">
+            <div class="row">
+                <div class="contacto col-sm-4">
+                    <h5>Contacto</h5>
+                    <a href="tel:+56976073197">+56976073197</a>
+                    <br>
+                    <a href="mailto:chothesmix@gmail.com">chothesmix@gmail.com</a>
+                </div>
+                <div class="ayuda col-sm-4">
+                    <h5>Ayuda</h5>
+                    ¿Quien Somos?
+                    <br>
+                    Politicas de privacidad
+                    <br>
+                    Cookies
+                </div>
+                <div class="redesSociales col-sm-4">
+                    <h5>Siguenos</h5>
+                    <ul>
+                        <li><i class="fab fa-facebook"></i></li>
+                        <li><i class="fab fa-instagram"></i></li>
+                        <li><i class="fab fa-twitter"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <address class="propiedadIntelectual">&copy;Daniel Tapia - Marcelo Barraza - Claudio Cornejo</address>
+        <p>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px" src="//jigsaw.w3.org/css-validator/images/vcss"
+                    alt="¡CSS Válido!" />
+            </a>
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img style="border:0;width:88px;height:31px"
+                        src="https://www.w3.org/Icons/valid-html401"
+                        alt="¡CSS Válido!" />
+                </a>
+            </p>
+        </p>
+    </footer>
+</body>
+
+</html>

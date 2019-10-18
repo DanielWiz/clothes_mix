@@ -1,0 +1,196 @@
+/* Default de la pagina (Estilo, colores,Margenes)*/
+
+body{
+    margin: 0;
+}
+    
+header{
+    background-color: #ffb6b9;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #ffb6b9;
+}
+
+footer{
+    background-color: #bbded6;
+    text-align: center;
+}
+
+/* Cambios a clases e ids */
+
+/* Menu superior */
+/* Separacion y agrandado del boton*/
+ul>li{
+    display: inline-block;
+    margin: 14px;
+    margin-top: 25px;
+    
+}
+
+ul>li>a{
+    padding: 10px;
+    background-color: #bbded6;
+    border-style: ridge;
+    border-color: #bbded6; 
+    border-radius: 5px;
+}
+/* Menu aparece de forma horizontal*/
+.menu{
+    display: inline-block;
+}
+
+
+/* Menu Responsivo*/
+.icon {
+    display: none;
+}
+
+/* Permite el cambio de color del boton al pasar por encima el mouse */
+ul>li :hover{
+    background-color: #fb8b8f80;
+}
+
+/* Pocisionamieno del logo de la pagina*/
+.logo{
+    display: inline-flex;
+    margin: 0;
+    max-width: 50%;
+}
+
+/* Pocisionamiento de la frase que se encuentra arriba del slideshow o carrusel*/
+.frase{
+    text-align: center;
+}
+
+/* Article ubicacion posicion */
+article.ubicacion{
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Article informacion tienda*/
+article.informacionTienda{
+    display: inline-block;
+    margin-left: 5%;
+    max-width: 550px;
+}
+
+/* Info ajuste*/
+section.info{
+    text-align: left;
+    margin-left: 5%;
+    padding: 15px; 
+}
+
+/* Datos del footer */
+
+div.contacto{
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.ayuda{
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.redesSociales{
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+}
+
+/* MAPA GOOGLE*/
+#map {
+    position: relative;
+    width: 450px;
+    height: 350px; 
+    background-color: grey;
+  }
+
+@media only screen and (max-width: 1010px){
+    article.ubicacion{
+        margin-left: 5%;
+    }
+
+}
+ 
+/* Media Query Ajuste Menu y Logo*/
+
+@media only screen and (max-width: 991px) and (min-width: 320px) {
+    section.info{
+        text-align: left;
+        margin-left: 0; 
+    }
+    
+    .informacionTienda{
+        margin-left: 0;
+    }
+
+    article.ubicacion{
+        margin-left: 0;
+    }
+
+    div.menuFila{
+        width: 650px;
+    }
+    
+    a.logoBoton{
+        position: relative;
+        margin-left: 38%;
+    }
+
+    nav.menu {
+      text-align: center;
+      width: 650px;
+    } 
+
+    div.redesSociales{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    a.logoBoton{
+        position: relative;
+        margin-left: 1%;
+    } 
+  
+    div.menuFila{
+        max-width: 320px;
+        font-size: 12px;
+    }
+    
+    
+    .menu li{
+        display: block;
+        font-size: 18px;
+    }
+
+    nav.menu {
+      text-align: center;
+      max-width: 320px;
+    }
+
+    div.redesSociales{
+        font-size: 18px;
+    }
+    
+    #map{
+        position: relative;
+        width: 370px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    #map{
+        position: relative;
+        width: 320px;
+    }
+}
