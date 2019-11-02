@@ -12,4 +12,4 @@ class formulario(models.Model):
 
 
 def str(self):
-        return "%s %s" % (self.nombre,self.apellido)
+    return "%s %s" % (self.nombre,self.apellido)
