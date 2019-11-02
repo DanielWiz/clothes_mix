@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import formulario
 
 # Create your views here.
 def inicio(request):
@@ -15,3 +16,14 @@ def datos(request):
 
 
 
+def Formuladio(request):
+    Nombre= request.POST('nombre')
+    Apellido= request.POST('apellido')
+    Correo= request.POST('correo')
+    Producto= request.POST('producto')
+    Telefono= request.POST('telefono')
+    Direccion= request.POST('direccion')
+    Sugerencia= request.POST('sugerencia')
+    p=formulario(nombre=Nombre,apellido=Apellido,correo=Correo,producto=producto,telefono=Telefono,direccion=Direccion,sugerencia=Sugerencia)
+    p.save()
+    return render(request, 'datos.html', {'nombre': Nombre})
