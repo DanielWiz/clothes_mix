@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{% static 'css/carrusel.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/v4-shims.css">
-    <script src="{% static 'js/menuresponsivo.js' %}"></script>
+    {% block head %}
+    {% endblock %}
     <script src="{% static 'js/mapa.js' %}"></script>
     <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -20,14 +21,14 @@
         <div class="menuSuperior container">
             <div class="row">
                 <div class="logoContainer col-xs-6">
-                    <a class="logoBoton" href="index.html"><img class="logo" src="{% static "img/Logo.PNG" %}" alt="Logo de la pagina"></a>
+                    <a class="logoBoton" href="{% url 'inicio' %}"><img class="logo" src="{% static "img/Logo.PNG" %}" alt="Logo de la pagina"></a>
                 </div>
                 <div class="menuFila col-xs-6">
                     <nav class="menu" id="menuRes">
                         <ul class="menuRe">
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="galeria.html">Galeria</a></li>
-                            <li><a href="form.html">Formulario</a></li>
+                            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                            <li><a href="{% url 'galeria' %}">Galeria</a></li>
+                            <li><a href="{% url 'formulario' %}">Formulario</a></li>
                         </ul>
                     </nav>
                 </div>
