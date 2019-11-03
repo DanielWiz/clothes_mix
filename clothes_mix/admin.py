@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import formulario
+from .models import Formulario
 
-admin.site.register(formulario)
+admin.site.register(Formulario)
