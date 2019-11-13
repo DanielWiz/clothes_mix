@@ -13,3 +13,11 @@ class Formulario(models.Model):
 
     def __str__(self):
         return "%s %s" % (self.nombre, self.apellido)
+
+class Ropa(models.Model):
+    nombre = models.CharField(max_length=10, unique=True)
+    imagen = models.ImageField(upload_to="ropas", null=True)
+    def __str__(self):
+        return self.nombre
+
+        
