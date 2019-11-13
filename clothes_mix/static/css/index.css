@@ -106,6 +106,10 @@ div.redesSociales{
     font-size: 30px;
 }
 
+.logoContainer{
+    width: 400px;
+}
+
 /* MAPA GOOGLE*/
 #map {
     position: relative;
