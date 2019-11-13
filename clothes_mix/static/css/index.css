@@ -25,7 +25,7 @@ footer{
 /* Separacion y agrandado del boton*/
 ul>li{
     display: inline-block;
-    margin: 14px;
+    margin: 10px;
     margin-top: 25px;
     
 }
@@ -107,7 +107,7 @@ div.redesSociales{
 }
 
 .logoContainer{
-    width: 400px;
+    width: 450px;
 }
 
 /* MAPA GOOGLE*/
@@ -116,7 +116,8 @@ div.redesSociales{
     width: 450px;
     height: 350px; 
     background-color: grey;
-  }
+}
+
 
 @media only screen and (max-width: 1010px){
     article.ubicacion{
