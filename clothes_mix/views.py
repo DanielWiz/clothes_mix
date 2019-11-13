@@ -3,15 +3,14 @@ from .models import Formulario
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserCreationForm
+from .models import Ropa
+from django.template import loader
+from django.http import HttpResponse
 
 
 # Create your views here.
 def inicio(request):
     return render(request, 'index.html', {})
-
-
-def galeria(request):
-    return render(request, 'galeria.html', {})
 
 
 def formulario(request):
@@ -48,3 +47,23 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/registro.html', {'form': form})
+
+
+
+
+
+def galeria(request):
+    #Obtenemos los departamentos ordenados de manera descendente.
+    #[Z-A] Se antepone el signo menos (-)
+    cargarRopa = Ropa.objects.all()
+
+    #Cargamos el archivo index.html que se encuentra en la carpeta 'templates'
+    template = loader.get_template('galeria.html')
+
+    #Creamos el nombre 'deptos' para reutilizarlo en el archivo 'index.html'
+    context = {
+        'Ropas': cargarRopa,
+    }
+
+    #Invocamos la página de respuesta 'index.html'
+    return HttpResponse(template.render(context, request))
