@@ -30,11 +30,8 @@
                             <li><a href="{% url 'galeria' %}">Galeria</a></li>
                             <li><a href="{% url 'formulario' %}">Formulario</a></li>
                             {% if user.is_authenticated %}
-                              <ul class="nav navbar-nav">
-                                <li><p style="color: white;">Bienvenido, {{ user.username }}!</p></li>
-                                <li><p><a class="btn-xs btn-info" style="border-radius: 6px;" href="{% url 'logout' %}">Cerrar sesión</a></p></li>
-                              </ul>
-                                   
+                                <li><p style="color: black;">Bienvenido, {{ user.username }}!</p></li>
+                                <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>                                
                             {% else %}
                               <li><a href="/registro"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
                             <li><a href="/accounts/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>          
