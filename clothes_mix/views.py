@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import Formulario
+
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserCreationForm
-from .models import Ropa
+from .models import Ropa,Formulario
 from django.template import loader
 from django.http import HttpResponse
 
@@ -66,4 +66,14 @@ def galeria(request):
     }
 
     #Invocamos la página de respuesta 'index.html'
+    return HttpResponse(template.render(context, request))
+
+
+#listar
+def datos_list(request):
+    cargarDatos = Formulario.objects.all()
+    template = loader.get_template('datos.html')
+    context = {
+        'Datos': cargarDatos,
+    }
     return HttpResponse(template.render(context, request))
