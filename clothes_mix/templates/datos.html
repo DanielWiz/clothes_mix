@@ -1,20 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="info">
-        <h3 id="titulo">Datos</h3>
-
-        <p class="dato">Email</p>
-        <p id="email1"></p>
-        
-        <p class="dato">Nombres</p>
-        <p id="nombre1"></p>
-        
-        <p class="dato">Apellidos</p>
-        <p id="apellido1"></p>
-        
-        <p class="dato">Fecha nacimiento</p>
-        <p id="fecha1"></p>
-        
-        <button id="mostrar">Mostrar datos</button>
-    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Correo</td>
+                <td>Producto</td>
+                <td>Telefono</td>
+                <td>Direccion</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if Datos %}
+                {% for z in Datos %}
+                    <tr>
+                        <td>{{z.nombre}}   </td>
+                        <td>{{z.apellido}} </td>
+                        <td>{{z.correo}}   </td>
+                        <td>{{z.producto}} </td>
+                        <td>{{z.telefono}} </td>
+                        <td>{{z.direccion}}</td>
+                    </tr>
+                {% endfor %}
+            {% else%}
+            <h1> No se encuentran Datos actuales</h1>
+            {% endif %}
+        </tbody>
+    </table>
 {% endblock %}
