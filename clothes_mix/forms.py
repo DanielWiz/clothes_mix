@@ -2,6 +2,9 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+from django.forms import ModelForm
+from .models import Formulario
+
 class UserCreationForm(forms.ModelForm):
     """
     A form that creates a user, with no privileges, from the given username and
@@ -36,3 +39,24 @@ class UserCreationForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+class FormularioForm(forms.ModelForm):
+    class Meta:
+        model = Formulario
+        fields = [
+            'nombre',
+            'apellido',
+            'correo',
+            'producto',
+            'telefono',
+            'direccion']
+        labels ={
+            'nombre' : 'Nombre',
+            'apellido':'Apellido',
+            'correo' : 'Correo',
+            'producto':'Producto',
+            'telefono': 'Telefono',
+            'direccion': 'Direccion',
+        }
+       
+        

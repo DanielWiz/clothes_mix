@@ -3,24 +3,33 @@
     <table class="table table-bordered">
         <thead>
             <tr>
+                <td>#</td>
                 <td>Nombre</td>
                 <td>Apellido</td>
                 <td>Correo</td>
                 <td>Producto</td>
                 <td>Telefono</td>
                 <td>Direccion</td>
+                <td>Accion</td>
             </tr>
         </thead>
         <tbody>
             {% if Datos %}
                 {% for z in Datos %}
                     <tr>
+                        <td>{{z.id}}</td>
                         <td>{{z.nombre}}   </td>
                         <td>{{z.apellido}} </td>
                         <td>{{z.correo}}   </td>
                         <td>{{z.producto}} </td>
                         <td>{{z.telefono}} </td>
                         <td>{{z.direccion}}</td>
+                        <td> <a href="/modificar/{{z.id}}">Editar</a>
+                            <a href="/delete/{{z.id}}" 
+                            onClick="return confirm('¿Seguro que quieres borrar a {{z.nombre}}?');">
+                              Borrar
+                          </a></td>
+                       
                     </tr>
                 {% endfor %}
             {% else%}

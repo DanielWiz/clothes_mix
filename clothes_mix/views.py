@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from .forms import UserCreationForm
+from .forms import UserCreationForm,FormularioForm
 from .models import Ropa,Formulario
 from django.template import loader
 from django.http import HttpResponse
@@ -60,7 +60,6 @@ def galeria(request):
     #Cargamos el archivo index.html que se encuentra en la carpeta 'templates'
     template = loader.get_template('galeria.html')
 
-    #Creamos el nombre 'deptos' para reutilizarlo en el archivo 'index.html'
     context = {
         'Ropas': cargarRopa,
     }
@@ -77,3 +76,28 @@ def datos_list(request):
         'Datos': cargarDatos,
     }
     return HttpResponse(template.render(context, request))
+
+
+#Editar
+def edit(request, persona_id):
+    instancia = Formulario.objects.get(id=persona_id)
+
+    form = FormularioForm(instance=instancia)
+
+    if request.method == "POST":
+        form = FormularioForm(request.POST, instance=instancia)
+        if form.is_valid():
+            instancia = form.save(commit=False)
+            
+            instancia.save()
+
+    
+    return render(request, "modificar.html", {'form': form})
+#Eliminar
+def delete(request, persona_id):
+    # Recuperamos la instancia de la persona y la borramos
+    instancia = Formulario.objects.get(id=persona_id)
+    instancia.delete()
+
+    # Después redireccionamos de nuevo a la lista
+    return redirect('/listar')
