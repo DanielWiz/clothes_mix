@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.contrib.auth.decorators import user_passes_test, login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from .forms import UserCreationForm,FormularioForm
@@ -12,7 +12,7 @@ from django.http import HttpResponse
 def inicio(request):
     return render(request, 'index.html', {})
 
-
+@login_required
 def formulario(request):
     return render(request, 'form.html', {})
 
@@ -90,6 +90,7 @@ def edit(request, persona_id):
             instancia = form.save(commit=False)
             
             instancia.save()
+            return redirect('/listar')
 
     
     return render(request, "modificar.html", {'form': form})

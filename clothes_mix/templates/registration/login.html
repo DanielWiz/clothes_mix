@@ -4,17 +4,16 @@
 <section>
 <div class="boxSingup" style="margin: 12px; text-align: center;">
 	<h2>Conéctate a tu cuenta</h2>
-	<h4>Create una cuenta nueva!</h4>
 	<form method="post">
 		{% csrf_token %}
 	    {{ form.as_p }}
 	    <div class="ficon">	
-	    	<button class="btn btn-base" type="submit">Login</button>
+	    	<button class="btn btn-success" type="submit">Login</button>
 	    <div/>  
 	    <p>No tienes cuenta? <a href="/registro">Registrate</a></p>	
 	</form>
 	<div class="ficon">
-		<a href="/" class="btn btn-default" role="button">Volver</a>
+		<a href="/" class="btn btn-primary" role="button">Volver</a>
 	</div>
 </div>
 </section>

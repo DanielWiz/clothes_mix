@@ -1,0 +1,27 @@
+Aqui se dara una explicacion simple de como se hara las pruebas para esta aplicacion web.
+
+1. La primera sera probar la base de datos, ver si se cae o se daña al ingresar datos con ids que ya se encuentran en la tabla.
+Esta se realizara en el modulo test que tienen incorporado django. Gracias a esto podemos escribir un metodo que nos permita
+llamar a la base de datos y escribir que datos vamos a incorporar en esta, siendo estas como mencione anteriormente datos erroneos o 
+ids repetidas
+
+2. Segundo sera probar el registro de personas a la pagina web. 
+Como se explico anteriormente se usara el modulo test de django. Con esto vamos a llamar a la vista registro y comenzar a agregar datos
+erroneos o repetidos que ya existen en la base de dato para ver si la aplicacion se cae o da errores.
+
+Ademas agrego un ejemplo sacado de https://docs.djangoproject.com/en/2.2/topics/testing/overview/
+
+from django.test import TestCase
+from myapp.models import Animal = Aqui se esta llamando al model Animals (Aqui nosotros llamariamos al modelo formulario)
+
+class AnimalTestCase(TestCase):
+    def setUp(self):
+        Animal.objects.create(name="lion", sound="roar") = Aqui se agregan o crean los datos a agregar a la tabla segun sus atributos
+        Animal.objects.create(name="cat", sound="meow")
+
+    def test_animals_can_speak(self):
+        """Animals that can speak are correctly identified"""
+        lion = Animal.objects.get(name="lion") = Aqui se testea si se agregaron y/o fallo el ingreso de datos.
+        cat = Animal.objects.get(name="cat")
+        self.assertEqual(lion.speak(), 'The lion says "roar"')
+        self.assertEqual(cat.speak(), 'The cat says "meow"')
