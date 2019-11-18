@@ -28,6 +28,7 @@
                         <ul class="menuRe">
                             <li><a href="{% url 'inicio' %}">Inicio</a></li>
                             <li><a href="{% url 'galeria' %}">Galeria</a></li>
+                            <li><a href="{% url 'datos' %}">Listar</a></li>
                             <li><a href="{% url 'formulario' %}">Formulario</a></li>
                             {% if user.is_authenticated %}
                                 <li><p style="color: black;">Bienvenido, {{ user.username }}!</p></li>
