@@ -1,1 +1,1 @@
-
+web: gunicorn Miferia.wsgi
